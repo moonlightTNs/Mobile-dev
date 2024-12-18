@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
           ],
         ),
         body: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(12.0),
           child: Center(
             child: Column(children: <Widget>[
               const SizedBox(height: 20),
@@ -208,55 +208,4 @@ class MyApp extends StatelessWidget {
 
 
 
-        // body: Center(
-        //   child: Column(
-        //     children: <Widget>[
-        //       const Text('Hello, World!',
-        //           style: TextStyle(
-        //               fontSize: 30,
-        //               color: Color.fromARGB(255, 255, 0, 0),
-        //               fontWeight: FontWeight.bold)),
-        //       const SizedBox(height: 20),
-        //       Image.network(
-        //         'https://images.pexels.com/photos/1379636/pexels-photo-1379636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-        //         width: 200,
-        //       ),
-        //       const SizedBox(height: 20),
-        //       Image.asset(
-        //         'assets/images/Nature.jpg',
-        //         width: 100,
-        //       ),
-        //       Row(
-        //         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        //         children: [
-        //           IconButton(
-        //               onPressed: () {
-        //                 debugPrint('I Like it!!');
-        //               },
-        //               icon: const Icon(
-        //                 Icons.favorite,
-        //                 size: 50,
-        //               )),
-                  // ElevatedButton(
-                  //   onPressed: () {
-                  //     debugPrint('HII');
-                  //   },
-                  //   child: const Text("Press me",
-                  //       style: TextStyle(
-                  //           fontSize: 20,
-                  //           color: Color.fromARGB(255, 0, 51, 255))),
-                  // ),
-        //           IconButton(
-        //               onPressed: () {
-        //                 debugPrint('EYE');
-        //               },
-        //               icon: const Icon(
-        //                 Icons.remove_red_eye,
-        //                 size: 50,
-        //               )),
-        //         ],
-        //       ),
-        //     ],
-        //   ),
-        // ),
   
