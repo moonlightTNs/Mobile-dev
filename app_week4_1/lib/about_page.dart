@@ -53,13 +53,13 @@ class _AboutPageState extends State<AboutPage> {
     }
 
     // คำนวณค่า
-    final chargingpower =  (volt != null) ? (volt * rate) / 1000 : 0; // วัตต์
-    final chargingTime = ((target * (batteryCapacity ?? 0)) / 100) / (chargingpower * (efficiencyS ?? 1));  // ชั่วโมงซ็นต์
+    final chargingpower =  (volt != null) ? (volt * rate) / 1000 : 0; 
+    final chargingTime = ((target * (batteryCapacity ?? 0)) / 100) / (chargingpower * (efficiencyS ?? 1));  
    
     
     // อัปเดต UI
     setState(() {
-      _chargingtime = chargingTime.toStringAsFixed(2);
+      _chargingtime = chargingTime.toStringAsFixed(2); // แปลงเป็น String และกำหนดให้มี 2 ตำแหน่งทศนิยม
       _chargingpower = chargingpower.toStringAsFixed(2);
     });
   }
@@ -222,7 +222,7 @@ class _AboutPageState extends State<AboutPage> {
             icon: Icons.power,
           ),
           CustomInputField(
-            controller: chargePower,
+            controller: efficiency,
             title: 'Efficiency (%)',
             hintText: 'Enter Bat Efficiency',
             icon: Icons.flag,
