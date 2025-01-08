@@ -32,64 +32,67 @@ class _MyWidgetState extends State<WelcomePage> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          const Center(
-            child: Text(
-              'Welcome Page',
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          children: [
+            const Center(
+              child: Text(
+                'Welcome Page',
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              ),
             ),
-          ),
-          const SizedBox(height: 20),
-          const SizedBox(height: 40),
-          TextField(
-            controller: nameController,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Enter your name',
+            const SizedBox(height: 20),
+            const SizedBox(height: 40),
+            TextField(
+              controller: nameController,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Enter your name',
+              ),
             ),
-          ),
-          const SizedBox(height: 20),
-          TextField(
-            controller: ageController,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Enter your age',
+            const SizedBox(height: 20),
+            TextField(
+              controller: ageController,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Enter your age',
+              ),
             ),
-          ),
-          const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {
-              String name = nameController.text;
-              int age = int.parse(ageController.text);
-
-              Navigator.pushNamed(
-                context,
-                '/display',
-                arguments: {'name': name, 'age': age},
-              );
-            },
-            child: const Text('Submit'),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/home');
-            },
-            child: const Text('GO TO ABOUT PAGE'),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              int age = int.parse(ageController.text);
-
-              Navigator.pushNamed(
-                context,
-                '/login',
-                arguments: {'age': age},
-              );
-            },
-            child: const Text('GO TO LOGIN PAGE'),
-          ),
-        ],
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                String name = nameController.text;
+                int age = int.parse(ageController.text);
+        
+                Navigator.pushNamed(
+                  context,
+                  '/display',
+                  arguments: {'name': name, 'age': age},
+                );
+              },
+              child: const Text('SUBMIT'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/home');
+              },
+              child: const Text('GO TO HOME PAGE'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                int age = int.parse(ageController.text);
+                String name = nameController.text;
+                Navigator.pushReplacementNamed(
+                  context,
+                  '/login',
+                  arguments: {'age': age , 'name': name},
+                );
+              },
+              child: const Text('GO TO LOGIN PAGE'),
+            )
+          ],
+        ),
       ),
     );
   }
