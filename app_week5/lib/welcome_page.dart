@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:app_week_4_1/about_page.dart';
-import 'package:app_week_4_1/display_page.dart';
+
 class WelcomePage extends StatefulWidget {
   const WelcomePage({super.key});
 
@@ -9,10 +8,8 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<WelcomePage> {
-  // set default value
-  // String _message1 = 'HOHIYO';
-  final name = TextEditingController();
-  final age = TextEditingController();
+  final nameController = TextEditingController();
+  final ageController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -39,18 +36,14 @@ class _MyWidgetState extends State<WelcomePage> {
         children: [
           const Center(
             child: Text(
-              'Welcome to Homepage',
+              'Welcome Page',
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
           ),
           const SizedBox(height: 20),
-          // Text(
-          //   ' $_message1 ',
-          //   style: const TextStyle(fontSize: 25),
-          // ),
           const SizedBox(height: 40),
           TextField(
-            controller: name,
+            controller: nameController,
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
               labelText: 'Enter your name',
@@ -58,7 +51,7 @@ class _MyWidgetState extends State<WelcomePage> {
           ),
           const SizedBox(height: 20),
           TextField(
-            controller: age,
+            controller: ageController,
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
               labelText: 'Enter your age',
@@ -67,27 +60,35 @@ class _MyWidgetState extends State<WelcomePage> {
           const SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const DisplayPage()));
-              // String input1 = name.text;
-              // String input2 = age.text;
-              // setState(() {
-              //   message1 = 'My name is $input1 $input2';
-              // });
+              String name = nameController.text;
+              int age = int.parse(ageController.text);
+
+              Navigator.pushNamed(
+                context,
+                '/display',
+                arguments: {'name': name, 'age': age},
+              );
             },
             child: const Text('Submit'),
           ),
-          
-         
-          
-           ElevatedButton(
+          ElevatedButton(
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const AboutPage()));
+              Navigator.pushNamed(context, '/home');
             },
             child: const Text('GO TO ABOUT PAGE'),
           ),
+          ElevatedButton(
+            onPressed: () {
+              int age = int.parse(ageController.text);
 
+              Navigator.pushNamed(
+                context,
+                '/login',
+                arguments: {'age': age},
+              );
+            },
+            child: const Text('GO TO LOGIN PAGE'),
+          ),
         ],
       ),
     );

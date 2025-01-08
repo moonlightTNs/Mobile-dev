@@ -1,5 +1,7 @@
-import 'package:app_week_4_1/about_page.dart';
-import 'package:app_week_4_1/welcome_page.dart';
+import 'package:app_week5/Home_page.dart';
+import 'package:app_week5/display_page.dart';
+import 'package:app_week5/login_page.dart';
+import 'package:app_week5/welcome_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -27,9 +29,18 @@ class CarDetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
 
-      home: WelcomePage(),
+      initialRoute: '/welcome',
+
+      routes: {
+        '/welcome': (context) => const WelcomePage(),
+        '/home': (context) => const HomePage(),
+        '/display': (context) => const DisplayPage(),
+        '/login': (context) => const LoginPage(),
+      },
+
+      // home: WelcomePage(),
 
     );
   }
