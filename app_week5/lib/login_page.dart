@@ -22,6 +22,7 @@ class _MyWidgetState extends State<LoginPage> {
           'assets/images/EV logo.png',
           width: 70,
         ),
+        
         actions: [
           IconButton(
             icon: const Icon(Icons.search, color: Colors.black87),
