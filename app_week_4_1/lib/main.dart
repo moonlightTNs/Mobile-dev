@@ -1,4 +1,4 @@
-import 'package:app_week_4_1/about_page.dart';
+
 import 'package:app_week_4_1/welcome_page.dart';
 import 'package:flutter/material.dart';
 

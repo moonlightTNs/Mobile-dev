@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:app_week_4_1/about_page.dart';
 import 'package:app_week_4_1/display_page.dart';
+
 class WelcomePage extends StatefulWidget {
   const WelcomePage({super.key});
 
@@ -68,7 +69,7 @@ class _MyWidgetState extends State<WelcomePage> {
           ElevatedButton(
             onPressed: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const DisplayPage()));
+                  MaterialPageRoute(builder: (context) => DisplayPage(name: name.text, age: int.parse(age.text))));
               // String input1 = name.text;
               // String input2 = age.text;
               // setState(() {
@@ -77,10 +78,8 @@ class _MyWidgetState extends State<WelcomePage> {
             },
             child: const Text('Submit'),
           ),
-          
-         
-          
-           ElevatedButton(
+
+          ElevatedButton(
             onPressed: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const AboutPage()));
@@ -88,6 +87,8 @@ class _MyWidgetState extends State<WelcomePage> {
             child: const Text('GO TO ABOUT PAGE'),
           ),
 
+         
+          
         ],
       ),
     );

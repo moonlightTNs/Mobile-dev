@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 
-
 class DisplayPage extends StatefulWidget {
   const DisplayPage({super.key, this.name, this.age});
-    final String? name ; 
-    final int? age ; 
+  final String? name;
+  final int? age;
 
   @override
   State<DisplayPage> createState() => _MyWidgetState();
 }
 
 class _MyWidgetState extends State<DisplayPage> {
-
   @override
   Widget build(BuildContext context) {
+    final args = ModalRoute.of(context)!.settings.arguments as Map;
+    final String? name = args['name'];
+    final int? age = args['age'];
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -43,24 +45,21 @@ class _MyWidgetState extends State<DisplayPage> {
           ),
           const SizedBox(height: 20),
           Text(
-            ' name : ${widget.name} ',
+            ' name : $name ',
             style: const TextStyle(fontSize: 25),
           ),
-          const SizedBox(height: 40),
-            Text(
-            ' age : ${widget.age} ',
+          const SizedBox(height: 10),
+          Text(
+            ' age : $age ',
             style: const TextStyle(fontSize: 25),
           ),
-          
-          
-            ElevatedButton(
+          const SizedBox(height: 30),
+          ElevatedButton(
             onPressed: () {
-           
+              Navigator.pop(context);
             },
-            child: const Text('Click me'),
+            child: const Text('Back to Welcome Page'),
           ),
-      
-          
         ],
       ),
     );

@@ -1,4 +1,4 @@
-import 'package:app_week5/home_page.dart';
+import 'package:app_week6/home_page.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -79,6 +79,26 @@ class _MyWidgetState extends State<WelcomePage> {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
               },
               child: const Text('GO TO HOME PAGE'),
+            ),
+            ElevatedButton(
+              onPressed: () {Navigator.pushReplacementNamed(
+                  context,
+                  '/listview',
+                  arguments: {},
+                );
+                
+              },
+              child: const Text('GO TO LISTVIEW PAGE'),
+            ),
+             ElevatedButton(
+              onPressed: () {Navigator.pushReplacementNamed(
+                  context,
+                  '/my_futurebuilder_page',
+                  arguments: {},
+                );
+                
+              },
+              child: const Text('GO TO FUTURE BUILDER PAGE'),
             ),
             ElevatedButton(
               onPressed: () {

@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 
-
-class DisplayPage extends StatefulWidget {
-  const DisplayPage({super.key, this.name, this.age});
-    final String? name ; 
-    final int? age ; 
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key, this.age, this.name});
+  final int? age;
+  final String? name;
 
   @override
-  State<DisplayPage> createState() => _MyWidgetState();
+  State<LoginPage> createState() => _MyWidgetState();
 }
 
-class _MyWidgetState extends State<DisplayPage> {
-
+class _MyWidgetState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
+    final args = ModalRoute.of(context)!.settings.arguments as Map;
+    final int? age = args['age'];
+    final String? name = args['name'];
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -37,30 +39,33 @@ class _MyWidgetState extends State<DisplayPage> {
         children: [
           const Center(
             child: Text(
-              'Display Page',
+              'Login Page',
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
           ),
           const SizedBox(height: 20),
           Text(
-            ' name : ${widget.name} ',
+            'name : $name ',
             style: const TextStyle(fontSize: 25),
           ),
-          const SizedBox(height: 40),
-            Text(
-            ' age : ${widget.age} ',
+          Text(
+            'age : $age ',
             style: const TextStyle(fontSize: 25),
           ),
-          
-          
-            ElevatedButton(
-            onPressed: () {
-           
-            },
-            child: const Text('Click me'),
+          const SizedBox(height: 30),
+          // ElevatedButton(
+          //   onPressed: () {
+          //     Navigator.pushNamed(context, '/welcome');
+          //   },
+          //   child: const Text('Back to Welcome Page'),
+          // ),
+          const Text(
+            'Login Successful',
+            style: TextStyle(
+              fontSize: 25,
+              color: Colors.red, // color red
+            ),
           ),
-      
-          
         ],
       ),
     );
