@@ -1,0 +1,2 @@
+C:/Users/thano/OneDrive/Desktop/CS 2-67/Mobile App/Dev/Mobile-dev/app_week6/android/app/.cxx/Debug/n3a6z1b5/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/thano/OneDrive/Desktop/CS 2-67/Mobile App/Dev/Mobile-dev/app_week6/android/app/.cxx/Debug/n3a6z1b5/x86_64/CMakeFiles/rebuild_cache.dir
